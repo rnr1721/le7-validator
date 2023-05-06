@@ -34,8 +34,22 @@ use function floatval,
 class ValidatorEngine implements ValidatorEngineInterface
 {
 
+    /**
+     * Labels (human-readable) for use in error output
+     * @var array
+     */
     protected array $names = array();
+    
+    /**
+     * Validation messages array
+     * @var array
+     */
     protected array $messages = array();
+    
+    /**
+     * This is for validate URL
+     * @var array
+     */
     protected array $allowedUrl = array('http://', 'https://');
 
     /**

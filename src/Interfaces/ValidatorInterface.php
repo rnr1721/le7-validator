@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Core\Interfaces;
 
+/**
+ * Main interface for validator.
+ * It contain all methods that need for validation.
+ * This interface contains common methods, and the concrete implementation
+ * is in ValidatorInterface
+ */
 interface ValidatorInterface
 {
 

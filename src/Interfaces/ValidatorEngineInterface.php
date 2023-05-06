@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Core\Interfaces;
 
+/**
+ * Interface for validator engine. You can use different engines,
+ * that implements ValidatorEngineInterface
+ * So, for use validator, you must create ValidatorInterface and inject
+ * into it ValidatorFactoryInterface (as in ValidatorFactory).
+ */
 interface ValidatorEngineInterface
 {
 
