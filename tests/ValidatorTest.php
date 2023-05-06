@@ -13,7 +13,7 @@ class ValidatorTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        
+        parent::setUp();
     }
 
     public function testValidator()
@@ -41,5 +41,5 @@ class ValidatorTest extends PHPUnit\Framework\TestCase
         $factory = new ValidatorFactory();
         return $factory->getValidator();
     }
-    
+
 }

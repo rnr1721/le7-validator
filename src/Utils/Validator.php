@@ -9,7 +9,9 @@ use Core\Interfaces\ValidatorInterface;
 use function array_key_exists,
              method_exists,
              explode,
-             in_array;
+             in_array,
+             bindtextdomain,
+             textdomain;
 
 class Validator implements ValidatorInterface
 {
@@ -22,6 +24,7 @@ class Validator implements ValidatorInterface
     public function __construct(ValidatorEngineInterface $validators)
     {
         $this->validators = $validators;
+        $this->setLocales();
     }
 
     public function validate(): bool
@@ -133,6 +136,13 @@ class Validator implements ValidatorInterface
     public function getMessages(): array
     {
         return $this->validators->getMessages();
+    }
+
+    private function setLocales(): void
+    {
+        $path = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'locales';
+        bindtextdomain('le7-validator', $path);
+        textdomain('le7-validator');
     }
 
 }
